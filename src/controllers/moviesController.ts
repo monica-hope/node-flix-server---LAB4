@@ -187,3 +187,16 @@ export const createReview = async (req: Request, res: Response) => {
         return res.status(400).json({ error: error.message });
     }
 };
+export const getMovie = async (req: Request, res: Response) => {
+    try {
+        const movie = await Movie.findById(req.params.id);
+        
+        if (!movie) {
+            return res.status(404).json({ 'error': 'Movie Not Found' });
+        }   
+
+        return res.status(200).json(movie);
+    } catch (error) {
+        return res.status(400).json({ error: error.message });
+    }
+};

@@ -4,10 +4,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import swaggerJsDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-
 // our mvc file imports
 import moviesRouter from './routes/moviesRoutes';
-
 // create & run new express app
 const app: Application = express();
 
